@@ -61,5 +61,15 @@ namespace Orai0310
 
             MessageBox.Show($"Click történt a {(sender as Button).Content} gombon");
         }
+
+        private void tbxSzambevitel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse((sender as TextBox).Text, out int eredmeny))
+            {
+                MessageBox.Show("Nem megfelelő számformátum");
+                (sender as TextBox).Text = "0";
+            }
+          
+        }
     }
 }

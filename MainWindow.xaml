@@ -12,8 +12,9 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <TextBox Name="tbxSzam" Width="60"/>
-            <Button Content="Generálás" Click="btnAdd_Click" Padding="3" Margin="3"/>
+            <TextBox Name="tbxSzam" Width="70"/>
+            <Button Content="Generálás" Click="btnAdd_Click" Padding="3" Margin="3 0 30 0"/>
+            <TextBox Text="0" Name="tbxSzambevitel" Width="100" TextChanged="tbxSzambevitel_TextChanged"/>
         </StackPanel>
         <Grid Name="gridGombok" Grid.Row="1"/>
     </Grid>
