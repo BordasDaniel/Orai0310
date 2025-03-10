@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Orai0310"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="Számozott gombok" Height="600" Width="300">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <TextBox Name="tbxSzam" Width="60"/>
+            <Button Content="Generálás" Click="btnAdd_Click" Padding="3" Margin="3"/>
+        </StackPanel>
+        <Grid Name="gridGombok" Grid.Row="1"/>
     </Grid>
+
 </Window>

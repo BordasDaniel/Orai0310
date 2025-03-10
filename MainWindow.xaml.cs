@@ -20,5 +20,46 @@ namespace Orai0310
         {
             InitializeComponent();
         }
+
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.TryParse(tbxSzam.Text, out int db))
+            {
+                if (db >= 1 && db <= 10)
+                {
+                    for (int i = 0; i < db; i++)
+                    {
+                        Button newButton = new()
+                        {
+                            Content = $"{i + 1}.",
+                            Height = 30,
+                            Width = 50,
+                            Margin = new Thickness(5, i * 30, 5, 5),
+                            HorizontalAlignment = HorizontalAlignment.Left,
+                            VerticalAlignment = VerticalAlignment.Top,
+                        };
+                        newButton.Click += NewBtnClick;
+                        gridGombok.Children.Add(newButton);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Határon kívüli szám");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Nem megfelelő számformátum");
+            }
+
+        }
+
+        private void NewBtnClick(object sender, RoutedEventArgs e)
+        {
+
+            MessageBox.Show($"Click történt a {(sender as Button).Content} gombon");
+        }
     }
 }
